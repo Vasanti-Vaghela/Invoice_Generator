@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css"></link>
+    <title>Invoice Generator</title>
+</head>
+<body>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Part - 1: Information  -->
+        <div class="info-container col2">
+            <div class="info-part-1">
+                <!-- Logo -->
+                <div class="logo bdr">
+                    <div class="placeholder">
+                        <i class="fa-duotone fa-plus"></i>
+                        <span>Add Your Logo</span>
+                    </div>
+                </div>
+                <!-- textarea -->
+                <div class="from-part">
+                    <textarea class="invoice-from bdr" placeholder="Who is this invoice from?(required)" style="resize:none;"></textarea>
+                </div>
+                <!-- Bill to , Ship to ..Info -->
+                <div class="to-part">
+                    <div class="bill">
+                        <label>Bill To</label>
+                        <textarea class="bill-to bdr" style="resize:none;"></textarea>
+                    </div>
+                    <div class="ship">
+                        <label>Ship To</label>
+                        <textarea class="ship-to bdr" style="resize:none;"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Part - 2: Information -->
+            <div class="info-part-2">
+                <!-- title -->
+                <div class="title" >
+                    <input type="text" class="title-invoice bdr" value="INVOICE">
+                
+                    <div class="subtitle">
+                        <div class="input-group">
+                            <span>#</span>
+                            <input type="text" class="subtitle-num">
+                        </div>
+                    </div>
+                </div>
+                <!-- Input Groups -->
+                <div class="input-group">
+                    <label id="date">Date</label>
+                    <input type="date" class="date-input">
+                </div>
+                <div class="input-group">
+                    <label id="payment">Payment Terms</label>
+                    <input type="text" class="payment-input">
+                </div>
+                <div class="input-group">
+                    <label id="due-date"> Due Date</label>
+                    <input type="date" class="due-date-input">
+                </div>
+                <div class="input-group">
+                    <label id="PO">PO Number</label>
+                    <input type="text" class="PO-input">
+                </div>
+            </div>
+        </div>
+
+        <!-- Part - 2: Items -->
+        <div class="items-container">
+            <div class="item-header">
+                <div class="name">
+                    <label>Item</label>
+                </div>
+                <div class="quantity">
+                    <label>Quantity</label>
+                </div>
+                <div class="rate">
+                    <label>Rate</label>
+                </div>
+                <div class="amount">
+                    <label>Amount</label>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="item-name">
+                    <input type="text" id="name" value="bhindi">
+                </div>
+                <div class="item-quantity">
+                    <input type="number" id="quantity" value="1" placeholder="Quantity">
+                </div>
+                <div class="item-rate">
+                    <input type="number" id="rate" value="0">
+                </div>
+                <div class="item-amount">
+                    <input type="number" id="amount">
+                </div>
+                <div class="item-button visible">
+                    <button class="delete-btn" id="delete-btn">X</button>
+                </div>
+            </div>
+        </div>
+        <div class="newline">
+            <button class="new-item" id="new-item">+ Line Item</button>
+        </div>
+
+        <!-- Part - 3: Calculation -->
+        <div class="calculation-container col2">
+            <div class="note_term">
+                <label class="notes">Notes</label>
+                <input type="textarea" placeholder="Notes - any relevant Information not alreay covered" class="note-area">
+                <label class="terms">Terms</label>
+                <input type="textarea" placeholder="Terms and conditions - late fees, payment methods, delivery schedule" class="term-area">
+            </div>
+            <div class="calculation">
+                <div class="cal-group">
+                    <label>Subtotal</label>
+                    <input type="number" placeholder="$0.00" class="subtotal" readonly>
+                </div>
+                <div class="cal-group">
+                    <label>Tax</label>
+                    <input type="number" class="tax" placeholder=""  value="">
+                </div>
+                <div class="cal-group">
+                    <button>+ Discount</button>
+                    <button>+ Shipping</button>
+                </div>
+                <div class="cal-group">
+                    <label>Total</label>
+                    <input type="number"  class="total" readonly>
+                </div>
+                <div class="cal-group">
+                    <label>Amount Paid</label>
+                    <input type="number" class="amount-paid" value="" >
+                </div>
+                <div class="cal-group">
+                    <label>Balance Due</label>
+                    <input type="number" class="balance-due" readonly>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
