@@ -50,6 +50,7 @@ newItemBtn.addEventListener('click', ()=> {
     
 
     newelement.addEventListener('input',(e) => {
+        
         let qty_value = newelement.querySelector('.item-quantity').querySelector('input').value
         let rte_value = newelement.querySelector('.item-rate').querySelector('input').value
         amt = qty_value * rte_value
@@ -89,9 +90,9 @@ newItemBtn.addEventListener('click', ()=> {
                 console.log(s)
                 balanceDue.value = s
             })
-            
+
         }
-        
+           
     })
 
     let removeEleBtn = newelement.querySelector('.item-button').querySelector('button')
