@@ -72,15 +72,27 @@ newItemBtn.addEventListener('click', ()=> {
             balanceDue.value = a
             // console.log(a)
             
-            tax.addEventListener('input', (e) => {
-                
+            if(tax.value){
                 let tax_apply = (subtotal.value * tax.value) / 100
                 console.log(tax_apply)
                 let taxed_value = +subtotal.value + +tax_apply
                 console.log(taxed_value)
                 total.value = taxed_value
                 balanceDue.value = taxed_value
-            })
+            } else {
+
+                tax.addEventListener('input', (e) => {
+                
+                    let tax_apply = (subtotal.value * e.target.value) / 100
+                    console.log(tax_apply)
+                    let taxed_value = +subtotal.value + +tax_apply
+                    console.log(taxed_value)
+                    total.value = taxed_value
+                    balanceDue.value = taxed_value
+                })
+            }
+
+            
 
             amountPaid.addEventListener('input', (e) => {
                 let a = parseInt(amountPaid.value)
